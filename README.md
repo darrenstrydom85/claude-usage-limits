@@ -56,7 +56,7 @@ That's it: no config, no keys, no network calls. The band appears after your nex
 
 ## ✨ What you get
 
-| | |
+| Feature | Details |
 |---|---|
 | ⏱️ **Rate limits** | Your 5-hour and weekly windows, plus Opus, Sonnet or spend-limit windows when your plan reports them |
 | ↻ **Reset countdowns** | How long until each window resets, right next to its bar |
