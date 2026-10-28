@@ -73,7 +73,7 @@ That's it: no config, no keys, no network calls. The band appears after your nex
 
 <img src="assets/states.svg" alt="Four bands: calm and all green; working with the crab scuttling; warming up with amber bars past 70%; and red hot with pulsing red bars past 90% and a sweating crab" width="100%">
 
-## 🖥️ In the terminal
+## 💻 In the terminal
 
 The terminal can't draw SVG, so there the band falls back to a single line of text bars in the same colours.
 
@@ -119,7 +119,7 @@ claude plugin uninstall usage-limits
 
 </details>
 
-## 🛠️ How it works
+## 🔧 How it works
 
 It's a single hooks module, [`hooks/register.tsx`](hooks/register.tsx):
 
