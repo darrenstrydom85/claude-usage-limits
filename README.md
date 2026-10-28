@@ -11,6 +11,7 @@ One slim, animated line above the prompt: rate limits, reset countdowns, context
 <img src="https://img.shields.io/badge/Claude%20Code-mod-D97757?style=for-the-badge&labelColor=1C1B1A" alt="Claude Code mod">
 <img src="https://img.shields.io/badge/desktop%20%2B%20terminal-supported-2F9E62?style=for-the-badge&labelColor=1C1B1A" alt="Desktop and terminal">
 <img src="https://img.shields.io/badge/setup-zero%20config-8C8A85?style=for-the-badge&labelColor=1C1B1A" alt="Zero config">
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-E8E5DF?style=for-the-badge&labelColor=1C1B1A" alt="MIT license"></a>
 </p>
 
 <p>
@@ -139,5 +140,5 @@ claude plugin test .
 <br>
 
 <div align="center">
-<sub>Built with <a href="https://claude.com/claude-code">Claude Code</a> · the images above are drawn by the mod itself</sub>
+<sub>Built with <a href="https://claude.com/claude-code">Claude Code</a> · the images above are drawn by the mod itself · <a href="LICENSE">MIT license</a></sub>
 </div>

@@ -2,5 +2,6 @@
   "name": "usage-limits",
   "version": "0.1.0",
   "description": "One line above the prompt: 5-hour and weekly rate limits, context fill and session cost",
-  "types": "./types/index.d.ts"
+  "types": "./types/index.d.ts",
+  "license": "MIT"
 }
