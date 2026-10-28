@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="336" viewBox="0 0 960 336" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="336" viewBox="0 0 1100 336" fill="none">
   <style>.t { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }</style>
-  <rect x=".5" y=".5" width="959" height="335" rx="16" fill="#171615" stroke="rgba(255,255,255,.08)"/>
-  <text class="t" x="30" y="34" font-size="13" font-weight="600" fill="#E8E5DF">Calm<tspan font-weight="400" fill="#8C8A85">  ·  green while every window is under 70%</tspan></text><svg x="30" y="46" width="900" height="36" overflow="visible">
+  <rect x=".5" y=".5" width="1099" height="335" rx="16" fill="#171615" stroke="rgba(255,255,255,.08)"/>
+  <text class="t" x="30" y="34" font-size="13" font-weight="600" fill="#E8E5DF">Calm<tspan font-weight="400" fill="#8C8A85">  ·  green under 70%, and the cache is warm</tspan></text><svg x="30" y="46" width="1040" height="36" overflow="visible">
     <style>
   text { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; font-variant-numeric: tabular-nums; }
   
@@ -11,6 +11,8 @@
   .seg:hover .track { fill: rgba(255,255,255,.16); }
   .label { font-size: 10px; font-weight: 600; letter-spacing: .08em; }
   .pct { font-size: 13px; font-weight: 600; } .reset { font-size: 10.5px; }
+  .hot-t { fill: #F5A25D; } .cold-t { fill: rgb(90,169,230); }
+  .tick { opacity: 0; } .s0merc { transform-box: fill-box; transform-origin: 50% 100%; }
   .bob { animation: bob 2.6s ease-in-out infinite; }
   .busy .bob { animation: scuttle .9s ease-in-out infinite; }
   .eye { transform-box: fill-box; transform-origin: center; animation: blink 5s infinite; }
@@ -24,29 +26,93 @@
   @keyframes wave { to { transform: translateY(-1px); } }
   @keyframes drip { 0% { opacity: 0; transform: translateY(-2px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(7px); } }
   @keyframes pulse { 50% { opacity: .55; } }
-  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
-      .s0wt0 { width: max(6px, calc(33.3333% - 194.73px)); }
-      .s0wf0 { width: max(6px, calc(4.0000% - 23.37px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0wgrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes show { from, to { opacity: 1; } }
+  @keyframes appear { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .tick.first { opacity: 1; } }
+      .s0wf0 { width: max(6px, calc(4.0000% - 26.41px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0wgrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s0wgrow0 { from { width: 0px; } }
-.s0wt1 { width: max(6px, calc(33.3333% - 194.73px)); }
-      .s0wf1 { width: max(6px, calc(7.6667% - 44.79px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0wgrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s0wt0 { width: max(6px, calc(33.3333% - 220.07px)); }
+.s0wf1 { width: max(6px, calc(7.6667% - 50.62px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0wgrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s0wgrow1 { from { width: 0px; } }
-.s0wt2 { width: max(6px, calc(33.3333% - 194.73px)); }
-      .s0wf2 { width: max(6px, calc(3.0000% - 17.53px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0wgrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s0wt1 { width: max(6px, calc(33.3333% - 220.07px)); }
+.s0wf2 { width: max(6px, calc(3.0000% - 19.81px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0wgrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s0wgrow2 { from { width: 0px; } }
-      .s0nt0 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s0nf0 { width: max(6px, calc(4.0000% - 16.98px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0ngrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s0wt2 { width: max(6px, calc(33.3333% - 220.07px)); }
+      .s0nf0 { width: max(6px, calc(4.0000% - 20.02px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0ngrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s0ngrow0 { from { width: 0px; } }
-.s0nt1 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s0nf1 { width: max(6px, calc(7.6667% - 32.55px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0ngrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s0nt0 { width: max(6px, calc(33.3333% - 166.87px)); }
+.s0nf1 { width: max(6px, calc(7.6667% - 38.38px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0ngrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s0ngrow1 { from { width: 0px; } }
-.s0nt2 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s0nf2 { width: max(6px, calc(3.0000% - 12.74px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0ngrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s0nt1 { width: max(6px, calc(33.3333% - 166.87px)); }
+.s0nf2 { width: max(6px, calc(3.0000% - 15.02px)); filter: drop-shadow(0 0 3px #62D69780); animation: s0ngrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s0ngrow2 { from { width: 0px; } }
+.s0nt2 { width: max(6px, calc(33.3333% - 166.87px)); }
+      .s0merc { transform: scaleY(0.9333); fill: rgb(240,129,81); animation: s0drain 3360s linear forwards, s0cool 3360s linear forwards; }
+      .s0bulb { fill: rgb(240,129,81); animation: s0cool 3360s linear forwards; }
+      .s0thermo { filter: drop-shadow(0 0 2px rgb(240,129,81)); }
+      @keyframes s0drain { to { transform: scaleY(0); } }
+      @keyframes s0cool { 46.4% { fill: rgb(242,184,128); } to { fill: rgb(90,169,230); } }
+.s0cx56 { animation: show 60s linear 0s; }
+.s0cx55 { animation: show 60s linear 60s; }
+.s0cx54 { animation: show 60s linear 120s; }
+.s0cx53 { animation: show 60s linear 180s; }
+.s0cx52 { animation: show 60s linear 240s; }
+.s0cx51 { animation: show 60s linear 300s; }
+.s0cx50 { animation: show 60s linear 360s; }
+.s0cx49 { animation: show 60s linear 420s; }
+.s0cx48 { animation: show 60s linear 480s; }
+.s0cx47 { animation: show 60s linear 540s; }
+.s0cx46 { animation: show 60s linear 600s; }
+.s0cx45 { animation: show 60s linear 660s; }
+.s0cx44 { animation: show 60s linear 720s; }
+.s0cx43 { animation: show 60s linear 780s; }
+.s0cx42 { animation: show 60s linear 840s; }
+.s0cx41 { animation: show 60s linear 900s; }
+.s0cx40 { animation: show 60s linear 960s; }
+.s0cx39 { animation: show 60s linear 1020s; }
+.s0cx38 { animation: show 60s linear 1080s; }
+.s0cx37 { animation: show 60s linear 1140s; }
+.s0cx36 { animation: show 60s linear 1200s; }
+.s0cx35 { animation: show 60s linear 1260s; }
+.s0cx34 { animation: show 60s linear 1320s; }
+.s0cx33 { animation: show 60s linear 1380s; }
+.s0cx32 { animation: show 60s linear 1440s; }
+.s0cx31 { animation: show 60s linear 1500s; }
+.s0cx30 { animation: show 60s linear 1560s; }
+.s0cx29 { animation: show 60s linear 1620s; }
+.s0cx28 { animation: show 60s linear 1680s; }
+.s0cx27 { animation: show 60s linear 1740s; }
+.s0cx26 { animation: show 60s linear 1800s; }
+.s0cx25 { animation: show 60s linear 1860s; }
+.s0cx24 { animation: show 60s linear 1920s; }
+.s0cx23 { animation: show 60s linear 1980s; }
+.s0cx22 { animation: show 60s linear 2040s; }
+.s0cx21 { animation: show 60s linear 2100s; }
+.s0cx20 { animation: show 60s linear 2160s; }
+.s0cx19 { animation: show 60s linear 2220s; }
+.s0cx18 { animation: show 60s linear 2280s; }
+.s0cx17 { animation: show 60s linear 2340s; }
+.s0cx16 { animation: show 60s linear 2400s; }
+.s0cx15 { animation: show 60s linear 2460s; }
+.s0cx14 { animation: show 60s linear 2520s; }
+.s0cx13 { animation: show 60s linear 2580s; }
+.s0cx12 { animation: show 60s linear 2640s; }
+.s0cx11 { animation: show 60s linear 2700s; }
+.s0cx10 { animation: show 60s linear 2760s; }
+.s0cx9 { animation: show 60s linear 2820s; }
+.s0cx8 { animation: show 60s linear 2880s; }
+.s0cx7 { animation: show 60s linear 2940s; }
+.s0cx6 { animation: show 60s linear 3000s; }
+.s0cx5 { animation: show 60s linear 3060s; }
+.s0cx4 { animation: show 60s linear 3120s; }
+.s0cx3 { animation: show 60s linear 3180s; }
+.s0cx2 { animation: show 60s linear 3240s; }
+.s0cx1 { animation: show 60s linear 3300s; }
+.s0cx0 { animation: appear .01s linear 3360s forwards; }
       .s0n { display: none; }
       
     </style>
-    <defs><linearGradient id="success"><stop offset="0" stop-color="#2F9E62"/><stop offset="1" stop-color="#62D697"/></linearGradient><linearGradient id="warning"><stop offset="0" stop-color="#D4951F"/><stop offset="1" stop-color="#F5C451"/></linearGradient><linearGradient id="error"><stop offset="0" stop-color="#D63E33"/><stop offset="1" stop-color="#F27A60"/></linearGradient><linearGradient id="capsule" x2="0" y2="1"><stop offset="0" stop-color="#2A2927"/><stop offset="1" stop-color="#1C1B1A"/></linearGradient></defs>
+    <defs><linearGradient id="success"><stop offset="0" stop-color="#2F9E62"/><stop offset="1" stop-color="#62D697"/></linearGradient><linearGradient id="warning"><stop offset="0" stop-color="#D4951F"/><stop offset="1" stop-color="#F5C451"/></linearGradient><linearGradient id="error"><stop offset="0" stop-color="#D63E33"/><stop offset="1" stop-color="#F27A60"/></linearGradient><linearGradient id="hot"><stop offset="0" stop-color="#D97757"/><stop offset="1" stop-color="#F5A25D"/></linearGradient><linearGradient id="capsule" x2="0" y2="1"><stop offset="0" stop-color="#2A2927"/><stop offset="1" stop-color="#1C1B1A"/></linearGradient></defs>
     <rect class="capsule" x=".5" y=".5" height="35" rx="17.5" fill="url(#capsule)" stroke="rgba(255,255,255,.08)"/>
     
   <g class="crab" transform="translate(16 9)">
@@ -69,70 +135,79 @@
   </g>
     <g class="s0w">
       <g class="seg">
-        <title>5-hour window · 12% used · resets in 4h 36m</title>
+        <title>5-hour window · 12% used · resets in 4h 32m</title>
         <svg x="0.0000%" overflow="visible"><g transform="translate(68.00 0)">
           <text class="label muted" x="0" y="21.5">5H</text>
           <rect class="track s0wt0" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s0wf0" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(-86.93 0)">
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-112.27 0)">
           <text class="pct fg" x="0" y="22.5">12%</text>
-          <text class="reset muted" x="29.4" y="22">↻ 4h 36m</text></g></svg>
-      </g><svg x="33.3333%" overflow="visible"><g transform="translate(9.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+          <text class="reset muted" x="29.4" y="22">↻ 4h 32m</text></g></svg>
+      </g><svg x="33.3333%" overflow="visible"><g transform="translate(-15.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
-        <title>Weekly · 23% used · resets in 5d 21h</title>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(23.67 0)">
+        <title>Weekly · 23% used · resets in 5d 20h</title>
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-1.67 0)">
           <text class="label muted" x="0" y="21.5">7D</text>
           <rect class="track s0wt1" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s0wf1" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-131.27 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-181.93 0)">
           <text class="pct fg" x="0" y="22.5">23%</text>
-          <text class="reset muted" x="29.4" y="22">↻ 5d 21h</text></g></svg>
-      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-34.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+          <text class="reset muted" x="29.4" y="22">↻ 5d 20h</text></g></svg>
+      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-85.33 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
         <title>Context window · 9% used</title>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-20.67 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-71.33 0)">
           <text class="label muted" x="0" y="21.5">CTX</text>
           <rect class="track s0wt2" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s0wf2" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="100.0000%" overflow="visible"><g transform="translate(-175.60 0)">
+        <svg x="100.0000%" overflow="visible"><g transform="translate(-251.60 0)">
           <text class="pct fg" x="0" y="22.5">9%</text>
           </g></svg>
       </g></g>
     <g class="s0n">
       <g class="seg">
-        <title>5-hour window · 12% used · resets in 4h 36m</title>
+        <title>5-hour window · 12% used · resets in 4h 32m</title>
         <svg x="0.0000%" overflow="visible"><g transform="translate(68.00 0)">
           <text class="label muted" x="0" y="21.5">5H</text>
           <rect class="track s0nt0" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s0nf0" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(-33.73 0)">
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-59.07 0)">
           <text class="pct fg" x="0" y="22.5">12%</text>
           </g></svg>
-      </g><svg x="33.3333%" overflow="visible"><g transform="translate(9.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+      </g><svg x="33.3333%" overflow="visible"><g transform="translate(-15.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
-        <title>Weekly · 23% used · resets in 5d 21h</title>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(23.67 0)">
+        <title>Weekly · 23% used · resets in 5d 20h</title>
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-1.67 0)">
           <text class="label muted" x="0" y="21.5">7D</text>
           <rect class="track s0nt1" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s0nf1" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-78.07 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-128.73 0)">
           <text class="pct fg" x="0" y="22.5">23%</text>
           </g></svg>
-      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-34.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-85.33 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
         <title>Context window · 9% used</title>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-20.67 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-71.33 0)">
           <text class="label muted" x="0" y="21.5">CTX</text>
           <rect class="track s0nt2" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s0nf2" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="100.0000%" overflow="visible"><g transform="translate(-122.40 0)">
+        <svg x="100.0000%" overflow="visible"><g transform="translate(-198.40 0)">
           <text class="pct fg" x="0" y="22.5">9%</text>
           </g></svg>
       </g></g>
-    <svg x="100.0000%" overflow="visible"><g transform="translate(-79.00 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg><g><title>Session cost</title><svg x="100.0000%" overflow="visible"><g transform="translate(-65.00 0)">
+    <svg x="100.0000%" overflow="visible"><g transform="translate(-155.00 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg><svg x="100.0000%" overflow="visible"><g transform="translate(-141.00 0)">
+    <g class="seg"><title>Prompt cache · warm for about 56m more (1h time to live) · the last reply read 96% of its input from the cache</title>
+      <rect class="pill" x="0" y="9" width="66" height="18" rx="9"/>
+      <g class="s0thermo">
+        <rect x="11.5" y="11.5" width="5" height="11" rx="2.5" fill="rgba(255,255,255,.1)"/>
+        <rect class="s0merc" x="12.75" y="13" width="2.5" height="10" rx="1.25"/>
+        <circle class="s0bulb" cx="14" cy="22.5" r="3.4"/>
+      </g>
+      <text class="pct fg tick first s0cx56" x="24" y="22.5">56m</text><text class="pct fg tick s0cx55" x="24" y="22.5">55m</text><text class="pct fg tick s0cx54" x="24" y="22.5">54m</text><text class="pct fg tick s0cx53" x="24" y="22.5">53m</text><text class="pct fg tick s0cx52" x="24" y="22.5">52m</text><text class="pct fg tick s0cx51" x="24" y="22.5">51m</text><text class="pct fg tick s0cx50" x="24" y="22.5">50m</text><text class="pct fg tick s0cx49" x="24" y="22.5">49m</text><text class="pct fg tick s0cx48" x="24" y="22.5">48m</text><text class="pct fg tick s0cx47" x="24" y="22.5">47m</text><text class="pct fg tick s0cx46" x="24" y="22.5">46m</text><text class="pct fg tick s0cx45" x="24" y="22.5">45m</text><text class="pct fg tick s0cx44" x="24" y="22.5">44m</text><text class="pct fg tick s0cx43" x="24" y="22.5">43m</text><text class="pct fg tick s0cx42" x="24" y="22.5">42m</text><text class="pct fg tick s0cx41" x="24" y="22.5">41m</text><text class="pct fg tick s0cx40" x="24" y="22.5">40m</text><text class="pct fg tick s0cx39" x="24" y="22.5">39m</text><text class="pct fg tick s0cx38" x="24" y="22.5">38m</text><text class="pct fg tick s0cx37" x="24" y="22.5">37m</text><text class="pct fg tick s0cx36" x="24" y="22.5">36m</text><text class="pct fg tick s0cx35" x="24" y="22.5">35m</text><text class="pct fg tick s0cx34" x="24" y="22.5">34m</text><text class="pct fg tick s0cx33" x="24" y="22.5">33m</text><text class="pct fg tick s0cx32" x="24" y="22.5">32m</text><text class="pct fg tick s0cx31" x="24" y="22.5">31m</text><text class="pct fg tick s0cx30" x="24" y="22.5">30m</text><text class="pct fg tick s0cx29" x="24" y="22.5">29m</text><text class="pct fg tick s0cx28" x="24" y="22.5">28m</text><text class="pct fg tick s0cx27" x="24" y="22.5">27m</text><text class="pct fg tick s0cx26" x="24" y="22.5">26m</text><text class="pct fg tick s0cx25" x="24" y="22.5">25m</text><text class="pct fg tick s0cx24" x="24" y="22.5">24m</text><text class="pct fg tick s0cx23" x="24" y="22.5">23m</text><text class="pct fg tick s0cx22" x="24" y="22.5">22m</text><text class="pct fg tick s0cx21" x="24" y="22.5">21m</text><text class="pct fg tick s0cx20" x="24" y="22.5">20m</text><text class="pct fg tick s0cx19" x="24" y="22.5">19m</text><text class="pct fg tick s0cx18" x="24" y="22.5">18m</text><text class="pct fg tick s0cx17" x="24" y="22.5">17m</text><text class="pct fg tick s0cx16" x="24" y="22.5">16m</text><text class="pct fg tick s0cx15" x="24" y="22.5">15m</text><text class="pct fg tick s0cx14" x="24" y="22.5">14m</text><text class="pct fg tick s0cx13" x="24" y="22.5">13m</text><text class="pct fg tick s0cx12" x="24" y="22.5">12m</text><text class="pct fg tick s0cx11" x="24" y="22.5">11m</text><text class="pct fg tick s0cx10" x="24" y="22.5">10m</text><text class="pct fg tick s0cx9" x="24" y="22.5">9m</text><text class="pct fg tick s0cx8" x="24" y="22.5">8m</text><text class="pct fg tick s0cx7" x="24" y="22.5">7m</text><text class="pct fg tick s0cx6" x="24" y="22.5">6m</text><text class="pct fg tick s0cx5" x="24" y="22.5">5m</text><text class="pct fg tick s0cx4" x="24" y="22.5">4m</text><text class="pct fg tick s0cx3" x="24" y="22.5">3m</text><text class="pct fg tick s0cx2" x="24" y="22.5">2m</text><text class="pct fg tick s0cx1" x="24" y="22.5">&lt;1m</text><text class="pct cold-t tick s0cx0" x="24" y="22.5">cold</text>
+    </g></g></svg><g><title>Session cost</title><svg x="100.0000%" overflow="visible"><g transform="translate(-65.00 0)">
         <rect class="pill" x="0" y="9" width="51" height="18" rx="9"/>
         <text class="reset muted" x="9" y="21.5">$0.31</text></g></svg></g>
-  </svg><text class="t" x="30" y="112" font-size="13" font-weight="600" fill="#E8E5DF">Working<tspan font-weight="400" fill="#8C8A85">  ·  the crab scuttles while Claude is busy</tspan></text><svg x="30" y="124" width="900" height="36" overflow="visible">
+  </svg><text class="t" x="30" y="112" font-size="13" font-weight="600" fill="#E8E5DF">Working<tspan font-weight="400" fill="#8C8A85">  ·  the crab scuttles and the cache runs hot</tspan></text><svg x="30" y="124" width="1040" height="36" overflow="visible">
     <style>
   text { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; font-variant-numeric: tabular-nums; }
   
@@ -142,6 +217,8 @@
   .seg:hover .track { fill: rgba(255,255,255,.16); }
   .label { font-size: 10px; font-weight: 600; letter-spacing: .08em; }
   .pct { font-size: 13px; font-weight: 600; } .reset { font-size: 10.5px; }
+  .hot-t { fill: #F5A25D; } .cold-t { fill: rgb(90,169,230); }
+  .tick { opacity: 0; } .s1merc { transform-box: fill-box; transform-origin: 50% 100%; }
   .bob { animation: bob 2.6s ease-in-out infinite; }
   .busy .bob { animation: scuttle .9s ease-in-out infinite; }
   .eye { transform-box: fill-box; transform-origin: center; animation: blink 5s infinite; }
@@ -155,29 +232,33 @@
   @keyframes wave { to { transform: translateY(-1px); } }
   @keyframes drip { 0% { opacity: 0; transform: translateY(-2px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(7px); } }
   @keyframes pulse { 50% { opacity: .55; } }
-  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
-      .s1wt0 { width: max(6px, calc(33.3333% - 188.83px)); }
-      .s1wf0 { width: max(6px, calc(15.6667% - 88.75px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1wgrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes show { from, to { opacity: 1; } }
+  @keyframes appear { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .tick.first { opacity: 1; } }
+      .s1wf0 { width: max(6px, calc(15.6667% - 100.66px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1wgrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s1wgrow0 { from { width: 0px; } }
-.s1wt1 { width: max(6px, calc(33.3333% - 188.83px)); }
-      .s1wf1 { width: max(6px, calc(18.0000% - 101.97px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1wgrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s1wt0 { width: max(6px, calc(33.3333% - 214.17px)); }
+.s1wf1 { width: max(6px, calc(18.0000% - 115.65px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1wgrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s1wgrow1 { from { width: 0px; } }
-.s1wt2 { width: max(6px, calc(33.3333% - 188.83px)); }
-      .s1wf2 { width: max(6px, calc(12.6667% - 71.76px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1wgrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s1wt1 { width: max(6px, calc(33.3333% - 214.17px)); }
+.s1wf2 { width: max(6px, calc(12.6667% - 81.38px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1wgrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s1wgrow2 { from { width: 0px; } }
-      .s1nt0 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s1nf0 { width: max(6px, calc(15.6667% - 66.52px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1ngrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s1wt2 { width: max(6px, calc(33.3333% - 214.17px)); }
+      .s1nf0 { width: max(6px, calc(15.6667% - 78.43px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1ngrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s1ngrow0 { from { width: 0px; } }
-.s1nt1 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s1nf1 { width: max(6px, calc(18.0000% - 76.43px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1ngrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s1nt0 { width: max(6px, calc(33.3333% - 166.87px)); }
+.s1nf1 { width: max(6px, calc(18.0000% - 90.11px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1ngrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s1ngrow1 { from { width: 0px; } }
-.s1nt2 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s1nf2 { width: max(6px, calc(12.6667% - 53.78px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1ngrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s1nt1 { width: max(6px, calc(33.3333% - 166.87px)); }
+.s1nf2 { width: max(6px, calc(12.6667% - 63.41px)); filter: drop-shadow(0 0 3px #62D69780); animation: s1ngrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s1ngrow2 { from { width: 0px; } }
+.s1nt2 { width: max(6px, calc(33.3333% - 166.87px)); }
+      .s1merc { transform: scaleY(1); fill: #F5A25D; } .s1bulb { fill: #F5A25D; }
+      .s1thermo { filter: drop-shadow(0 0 3px #F5A25D); animation: pulse 1.6s ease-in-out infinite; }
       .s1n { display: none; }
       
     </style>
-    <defs><linearGradient id="success"><stop offset="0" stop-color="#2F9E62"/><stop offset="1" stop-color="#62D697"/></linearGradient><linearGradient id="warning"><stop offset="0" stop-color="#D4951F"/><stop offset="1" stop-color="#F5C451"/></linearGradient><linearGradient id="error"><stop offset="0" stop-color="#D63E33"/><stop offset="1" stop-color="#F27A60"/></linearGradient><linearGradient id="capsule" x2="0" y2="1"><stop offset="0" stop-color="#2A2927"/><stop offset="1" stop-color="#1C1B1A"/></linearGradient></defs>
+    <defs><linearGradient id="success"><stop offset="0" stop-color="#2F9E62"/><stop offset="1" stop-color="#62D697"/></linearGradient><linearGradient id="warning"><stop offset="0" stop-color="#D4951F"/><stop offset="1" stop-color="#F5C451"/></linearGradient><linearGradient id="error"><stop offset="0" stop-color="#D63E33"/><stop offset="1" stop-color="#F27A60"/></linearGradient><linearGradient id="hot"><stop offset="0" stop-color="#D97757"/><stop offset="1" stop-color="#F5A25D"/></linearGradient><linearGradient id="capsule" x2="0" y2="1"><stop offset="0" stop-color="#2A2927"/><stop offset="1" stop-color="#1C1B1A"/></linearGradient></defs>
     <rect class="capsule" x=".5" y=".5" height="35" rx="17.5" fill="url(#capsule)" stroke="rgba(255,255,255,.08)"/>
     
   <g class="crab busy" transform="translate(16 9)">
@@ -205,27 +286,27 @@
           <text class="label muted" x="0" y="21.5">5H</text>
           <rect class="track s1wt0" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s1wf0" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(-81.03 0)">
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-106.37 0)">
           <text class="pct fg" x="0" y="22.5">47%</text>
           <text class="reset muted" x="29.4" y="22">↻ 3h 6m</text></g></svg>
-      </g><svg x="33.3333%" overflow="visible"><g transform="translate(9.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+      </g><svg x="33.3333%" overflow="visible"><g transform="translate(-15.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
         <title>Weekly · 54% used · resets in 4d 2h</title>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(23.67 0)">
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-1.67 0)">
           <text class="label muted" x="0" y="21.5">7D</text>
           <rect class="track s1wt1" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s1wf1" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-125.37 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-176.03 0)">
           <text class="pct fg" x="0" y="22.5">54%</text>
           <text class="reset muted" x="29.4" y="22">↻ 4d 2h</text></g></svg>
-      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-34.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-85.33 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
         <title>Context window · 38% used</title>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-20.67 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-71.33 0)">
           <text class="label muted" x="0" y="21.5">CTX</text>
           <rect class="track s1wt2" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s1wf2" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="100.0000%" overflow="visible"><g transform="translate(-169.70 0)">
+        <svg x="100.0000%" overflow="visible"><g transform="translate(-245.70 0)">
           <text class="pct fg" x="0" y="22.5">38%</text>
           </g></svg>
       </g></g>
@@ -236,34 +317,43 @@
           <text class="label muted" x="0" y="21.5">5H</text>
           <rect class="track s1nt0" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s1nf0" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(-33.73 0)">
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-59.07 0)">
           <text class="pct fg" x="0" y="22.5">47%</text>
           </g></svg>
-      </g><svg x="33.3333%" overflow="visible"><g transform="translate(9.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+      </g><svg x="33.3333%" overflow="visible"><g transform="translate(-15.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
         <title>Weekly · 54% used · resets in 4d 2h</title>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(23.67 0)">
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-1.67 0)">
           <text class="label muted" x="0" y="21.5">7D</text>
           <rect class="track s1nt1" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s1nf1" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-78.07 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-128.73 0)">
           <text class="pct fg" x="0" y="22.5">54%</text>
           </g></svg>
-      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-34.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-85.33 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
         <title>Context window · 38% used</title>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-20.67 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-71.33 0)">
           <text class="label muted" x="0" y="21.5">CTX</text>
           <rect class="track s1nt2" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s1nf2" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="100.0000%" overflow="visible"><g transform="translate(-122.40 0)">
+        <svg x="100.0000%" overflow="visible"><g transform="translate(-198.40 0)">
           <text class="pct fg" x="0" y="22.5">38%</text>
           </g></svg>
       </g></g>
-    <svg x="100.0000%" overflow="visible"><g transform="translate(-79.00 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg><g><title>Session cost</title><svg x="100.0000%" overflow="visible"><g transform="translate(-65.00 0)">
+    <svg x="100.0000%" overflow="visible"><g transform="translate(-155.00 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg><svg x="100.0000%" overflow="visible"><g transform="translate(-141.00 0)">
+    <g class="seg"><title>Prompt cache · hot: Claude is using it right now · the last reply read 96% of its input from the cache</title>
+      <rect class="pill" x="0" y="9" width="66" height="18" rx="9"/>
+      <g class="s1thermo">
+        <rect x="11.5" y="11.5" width="5" height="11" rx="2.5" fill="rgba(255,255,255,.1)"/>
+        <rect class="s1merc" x="12.75" y="13" width="2.5" height="10" rx="1.25"/>
+        <circle class="s1bulb" cx="14" cy="22.5" r="3.4"/>
+      </g>
+      <text class="pct hot-t" x="24" y="22.5">hot</text>
+    </g></g></svg><g><title>Session cost</title><svg x="100.0000%" overflow="visible"><g transform="translate(-65.00 0)">
         <rect class="pill" x="0" y="9" width="51" height="18" rx="9"/>
         <text class="reset muted" x="9" y="21.5">$2.10</text></g></svg></g>
-  </svg><text class="t" x="30" y="190" font-size="13" font-weight="600" fill="#E8E5DF">Warming up<tspan font-weight="400" fill="#8C8A85">  ·  amber from 70%</tspan></text><svg x="30" y="202" width="900" height="36" overflow="visible">
+  </svg><text class="t" x="30" y="190" font-size="13" font-weight="600" fill="#E8E5DF">Warming up<tspan font-weight="400" fill="#8C8A85">  ·  amber from 70%, the cache cooling off</tspan></text><svg x="30" y="202" width="1040" height="36" overflow="visible">
     <style>
   text { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; font-variant-numeric: tabular-nums; }
   
@@ -273,6 +363,8 @@
   .seg:hover .track { fill: rgba(255,255,255,.16); }
   .label { font-size: 10px; font-weight: 600; letter-spacing: .08em; }
   .pct { font-size: 13px; font-weight: 600; } .reset { font-size: 10.5px; }
+  .hot-t { fill: #F5A25D; } .cold-t { fill: rgb(90,169,230); }
+  .tick { opacity: 0; } .s2merc { transform-box: fill-box; transform-origin: 50% 100%; }
   .bob { animation: bob 2.6s ease-in-out infinite; }
   .busy .bob { animation: scuttle .9s ease-in-out infinite; }
   .eye { transform-box: fill-box; transform-origin: center; animation: blink 5s infinite; }
@@ -286,29 +378,56 @@
   @keyframes wave { to { transform: translateY(-1px); } }
   @keyframes drip { 0% { opacity: 0; transform: translateY(-2px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(7px); } }
   @keyframes pulse { 50% { opacity: .55; } }
-  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
-      .s2wt0 { width: max(6px, calc(33.3333% - 194.73px)); }
-      .s2wf0 { width: max(6px, calc(26.0000% - 151.89px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s2wgrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes show { from, to { opacity: 1; } }
+  @keyframes appear { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .tick.first { opacity: 1; } }
+      .s2wf0 { width: max(6px, calc(26.0000% - 167.05px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s2wgrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s2wgrow0 { from { width: 0px; } }
-.s2wt1 { width: max(6px, calc(33.3333% - 194.73px)); }
-      .s2wf1 { width: max(6px, calc(23.6667% - 138.26px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s2wgrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s2wt0 { width: max(6px, calc(33.3333% - 214.17px)); }
+.s2wf1 { width: max(6px, calc(23.6667% - 152.06px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s2wgrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s2wgrow1 { from { width: 0px; } }
-.s2wt2 { width: max(6px, calc(33.3333% - 194.73px)); }
-      .s2wf2 { width: max(6px, calc(21.3333% - 124.63px)); filter: drop-shadow(0 0 3px #62D69780); animation: s2wgrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s2wt1 { width: max(6px, calc(33.3333% - 214.17px)); }
+.s2wf2 { width: max(6px, calc(21.3333% - 137.07px)); filter: drop-shadow(0 0 3px #62D69780); animation: s2wgrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s2wgrow2 { from { width: 0px; } }
-      .s2nt0 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s2nf0 { width: max(6px, calc(26.0000% - 110.40px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s2ngrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s2wt2 { width: max(6px, calc(33.3333% - 214.17px)); }
+      .s2nf0 { width: max(6px, calc(26.0000% - 130.16px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s2ngrow0 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s2ngrow0 { from { width: 0px; } }
-.s2nt1 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s2nf1 { width: max(6px, calc(23.6667% - 100.49px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s2ngrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s2nt0 { width: max(6px, calc(33.3333% - 166.87px)); }
+.s2nf1 { width: max(6px, calc(23.6667% - 118.48px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s2ngrow1 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s2ngrow1 { from { width: 0px; } }
-.s2nt2 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s2nf2 { width: max(6px, calc(21.3333% - 90.58px)); filter: drop-shadow(0 0 3px #62D69780); animation: s2ngrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s2nt1 { width: max(6px, calc(33.3333% - 166.87px)); }
+.s2nf2 { width: max(6px, calc(21.3333% - 106.79px)); filter: drop-shadow(0 0 3px #62D69780); animation: s2ngrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s2ngrow2 { from { width: 0px; } }
+.s2nt2 { width: max(6px, calc(33.3333% - 166.87px)); }
+      .s2merc { transform: scaleY(0.3167); fill: rgb(186,179,165); animation: s2drain 1140s linear forwards, s2cool 1140s linear forwards; }
+      .s2bulb { fill: rgb(186,179,165); animation: s2cool 1140s linear forwards; }
+      .s2thermo { filter: drop-shadow(0 0 2px rgb(186,179,165)); }
+      @keyframes s2drain { to { transform: scaleY(0); } }
+      @keyframes s2cool { to { fill: rgb(90,169,230); } }
+.s2cx19 { animation: show 60s linear 0s; }
+.s2cx18 { animation: show 60s linear 60s; }
+.s2cx17 { animation: show 60s linear 120s; }
+.s2cx16 { animation: show 60s linear 180s; }
+.s2cx15 { animation: show 60s linear 240s; }
+.s2cx14 { animation: show 60s linear 300s; }
+.s2cx13 { animation: show 60s linear 360s; }
+.s2cx12 { animation: show 60s linear 420s; }
+.s2cx11 { animation: show 60s linear 480s; }
+.s2cx10 { animation: show 60s linear 540s; }
+.s2cx9 { animation: show 60s linear 600s; }
+.s2cx8 { animation: show 60s linear 660s; }
+.s2cx7 { animation: show 60s linear 720s; }
+.s2cx6 { animation: show 60s linear 780s; }
+.s2cx5 { animation: show 60s linear 840s; }
+.s2cx4 { animation: show 60s linear 900s; }
+.s2cx3 { animation: show 60s linear 960s; }
+.s2cx2 { animation: show 60s linear 1020s; }
+.s2cx1 { animation: show 60s linear 1080s; }
+.s2cx0 { animation: appear .01s linear 1140s forwards; }
       .s2n { display: none; }
       
     </style>
-    <defs><linearGradient id="success"><stop offset="0" stop-color="#2F9E62"/><stop offset="1" stop-color="#62D697"/></linearGradient><linearGradient id="warning"><stop offset="0" stop-color="#D4951F"/><stop offset="1" stop-color="#F5C451"/></linearGradient><linearGradient id="error"><stop offset="0" stop-color="#D63E33"/><stop offset="1" stop-color="#F27A60"/></linearGradient><linearGradient id="capsule" x2="0" y2="1"><stop offset="0" stop-color="#2A2927"/><stop offset="1" stop-color="#1C1B1A"/></linearGradient></defs>
+    <defs><linearGradient id="success"><stop offset="0" stop-color="#2F9E62"/><stop offset="1" stop-color="#62D697"/></linearGradient><linearGradient id="warning"><stop offset="0" stop-color="#D4951F"/><stop offset="1" stop-color="#F5C451"/></linearGradient><linearGradient id="error"><stop offset="0" stop-color="#D63E33"/><stop offset="1" stop-color="#F27A60"/></linearGradient><linearGradient id="hot"><stop offset="0" stop-color="#D97757"/><stop offset="1" stop-color="#F5A25D"/></linearGradient><linearGradient id="capsule" x2="0" y2="1"><stop offset="0" stop-color="#2A2927"/><stop offset="1" stop-color="#1C1B1A"/></linearGradient></defs>
     <rect class="capsule" x=".5" y=".5" height="35" rx="17.5" fill="url(#capsule)" stroke="rgba(255,255,255,.08)"/>
     
   <g class="crab" transform="translate(16 9)">
@@ -331,70 +450,79 @@
   </g>
     <g class="s2w">
       <g class="seg">
-        <title>5-hour window · 78% used · resets in 1h 24m</title>
+        <title>5-hour window · 78% used · resets in 43m</title>
         <svg x="0.0000%" overflow="visible"><g transform="translate(68.00 0)">
           <text class="label muted" x="0" y="21.5">5H</text>
           <rect class="track s2wt0" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s2wf0" x="29.80" y="15" height="6" rx="3" fill="url(#warning)"/></g></svg>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(-86.93 0)">
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-106.37 0)">
           <text class="pct fg" x="0" y="22.5">78%</text>
-          <text class="reset muted" x="29.4" y="22">↻ 1h 24m</text></g></svg>
-      </g><svg x="33.3333%" overflow="visible"><g transform="translate(9.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+          <text class="reset muted" x="29.4" y="22">↻ 43m</text></g></svg>
+      </g><svg x="33.3333%" overflow="visible"><g transform="translate(-15.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
-        <title>Weekly · 71% used · resets in 2d 4h</title>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(23.67 0)">
+        <title>Weekly · 71% used · resets in 2d 3h</title>
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-1.67 0)">
           <text class="label muted" x="0" y="21.5">7D</text>
           <rect class="track s2wt1" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s2wf1" x="29.80" y="15" height="6" rx="3" fill="url(#warning)"/></g></svg>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-131.27 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-176.03 0)">
           <text class="pct fg" x="0" y="22.5">71%</text>
-          <text class="reset muted" x="29.4" y="22">↻ 2d 4h</text></g></svg>
-      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-34.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+          <text class="reset muted" x="29.4" y="22">↻ 2d 3h</text></g></svg>
+      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-85.33 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
         <title>Context window · 64% used</title>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-20.67 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-71.33 0)">
           <text class="label muted" x="0" y="21.5">CTX</text>
           <rect class="track s2wt2" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s2wf2" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="100.0000%" overflow="visible"><g transform="translate(-175.60 0)">
+        <svg x="100.0000%" overflow="visible"><g transform="translate(-245.70 0)">
           <text class="pct fg" x="0" y="22.5">64%</text>
           </g></svg>
       </g></g>
     <g class="s2n">
       <g class="seg">
-        <title>5-hour window · 78% used · resets in 1h 24m</title>
+        <title>5-hour window · 78% used · resets in 43m</title>
         <svg x="0.0000%" overflow="visible"><g transform="translate(68.00 0)">
           <text class="label muted" x="0" y="21.5">5H</text>
           <rect class="track s2nt0" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s2nf0" x="29.80" y="15" height="6" rx="3" fill="url(#warning)"/></g></svg>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(-33.73 0)">
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-59.07 0)">
           <text class="pct fg" x="0" y="22.5">78%</text>
           </g></svg>
-      </g><svg x="33.3333%" overflow="visible"><g transform="translate(9.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+      </g><svg x="33.3333%" overflow="visible"><g transform="translate(-15.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
-        <title>Weekly · 71% used · resets in 2d 4h</title>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(23.67 0)">
+        <title>Weekly · 71% used · resets in 2d 3h</title>
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-1.67 0)">
           <text class="label muted" x="0" y="21.5">7D</text>
           <rect class="track s2nt1" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s2nf1" x="29.80" y="15" height="6" rx="3" fill="url(#warning)"/></g></svg>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-78.07 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-128.73 0)">
           <text class="pct fg" x="0" y="22.5">71%</text>
           </g></svg>
-      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-34.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-85.33 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
         <title>Context window · 64% used</title>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-20.67 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-71.33 0)">
           <text class="label muted" x="0" y="21.5">CTX</text>
           <rect class="track s2nt2" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s2nf2" x="29.80" y="15" height="6" rx="3" fill="url(#success)"/></g></svg>
-        <svg x="100.0000%" overflow="visible"><g transform="translate(-122.40 0)">
+        <svg x="100.0000%" overflow="visible"><g transform="translate(-198.40 0)">
           <text class="pct fg" x="0" y="22.5">64%</text>
           </g></svg>
       </g></g>
-    <svg x="100.0000%" overflow="visible"><g transform="translate(-79.00 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg><g><title>Session cost</title><svg x="100.0000%" overflow="visible"><g transform="translate(-65.00 0)">
+    <svg x="100.0000%" overflow="visible"><g transform="translate(-155.00 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg><svg x="100.0000%" overflow="visible"><g transform="translate(-141.00 0)">
+    <g class="seg"><title>Prompt cache · warm for about 19m more (1h time to live) · the last reply read 96% of its input from the cache</title>
+      <rect class="pill" x="0" y="9" width="66" height="18" rx="9"/>
+      <g class="s2thermo">
+        <rect x="11.5" y="11.5" width="5" height="11" rx="2.5" fill="rgba(255,255,255,.1)"/>
+        <rect class="s2merc" x="12.75" y="13" width="2.5" height="10" rx="1.25"/>
+        <circle class="s2bulb" cx="14" cy="22.5" r="3.4"/>
+      </g>
+      <text class="pct fg tick first s2cx19" x="24" y="22.5">19m</text><text class="pct fg tick s2cx18" x="24" y="22.5">18m</text><text class="pct fg tick s2cx17" x="24" y="22.5">17m</text><text class="pct fg tick s2cx16" x="24" y="22.5">16m</text><text class="pct fg tick s2cx15" x="24" y="22.5">15m</text><text class="pct fg tick s2cx14" x="24" y="22.5">14m</text><text class="pct fg tick s2cx13" x="24" y="22.5">13m</text><text class="pct fg tick s2cx12" x="24" y="22.5">12m</text><text class="pct fg tick s2cx11" x="24" y="22.5">11m</text><text class="pct fg tick s2cx10" x="24" y="22.5">10m</text><text class="pct fg tick s2cx9" x="24" y="22.5">9m</text><text class="pct fg tick s2cx8" x="24" y="22.5">8m</text><text class="pct fg tick s2cx7" x="24" y="22.5">7m</text><text class="pct fg tick s2cx6" x="24" y="22.5">6m</text><text class="pct fg tick s2cx5" x="24" y="22.5">5m</text><text class="pct fg tick s2cx4" x="24" y="22.5">4m</text><text class="pct fg tick s2cx3" x="24" y="22.5">3m</text><text class="pct fg tick s2cx2" x="24" y="22.5">2m</text><text class="pct fg tick s2cx1" x="24" y="22.5">&lt;1m</text><text class="pct cold-t tick s2cx0" x="24" y="22.5">cold</text>
+    </g></g></svg><g><title>Session cost</title><svg x="100.0000%" overflow="visible"><g transform="translate(-65.00 0)">
         <rect class="pill" x="0" y="9" width="51" height="18" rx="9"/>
         <text class="reset muted" x="9" y="21.5">$4.27</text></g></svg></g>
-  </svg><text class="t" x="30" y="268" font-size="13" font-weight="600" fill="#E8E5DF">Red hot<tspan font-weight="400" fill="#8C8A85">  ·  red from 90%: the bar pulses and the crab sweats</tspan></text><svg x="30" y="280" width="900" height="36" overflow="visible">
+  </svg><text class="t" x="30" y="268" font-size="13" font-weight="600" fill="#E8E5DF">Red hot<tspan font-weight="400" fill="#8C8A85">  ·  red from 90%: bars pulse, the crab sweats, the cache has gone cold</tspan></text><svg x="30" y="280" width="1040" height="36" overflow="visible">
     <style>
   text { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; font-variant-numeric: tabular-nums; }
   
@@ -404,6 +532,8 @@
   .seg:hover .track { fill: rgba(255,255,255,.16); }
   .label { font-size: 10px; font-weight: 600; letter-spacing: .08em; }
   .pct { font-size: 13px; font-weight: 600; } .reset { font-size: 10.5px; }
+  .hot-t { fill: #F5A25D; } .cold-t { fill: rgb(90,169,230); }
+  .tick { opacity: 0; } .s3merc { transform-box: fill-box; transform-origin: 50% 100%; }
   .bob { animation: bob 2.6s ease-in-out infinite; }
   .busy .bob { animation: scuttle .9s ease-in-out infinite; }
   .eye { transform-box: fill-box; transform-origin: center; animation: blink 5s infinite; }
@@ -417,29 +547,32 @@
   @keyframes wave { to { transform: translateY(-1px); } }
   @keyframes drip { 0% { opacity: 0; transform: translateY(-2px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(7px); } }
   @keyframes pulse { 50% { opacity: .55; } }
-  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
-      .s3wt0 { width: max(6px, calc(33.3333% - 194.73px)); }
-      .s3wf0 { width: max(6px, calc(32.0000% - 186.94px)); filter: drop-shadow(0 0 3px #F27A6080); animation: s3wgrow0 .9s cubic-bezier(.2,.8,.2,1) both, pulse 1.6s ease-in-out infinite; }
+  @keyframes show { from, to { opacity: 1; } }
+  @keyframes appear { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .tick.first { opacity: 1; } }
+      .s3wf0 { width: max(6px, calc(32.0000% - 216.93px)); filter: drop-shadow(0 0 3px #F27A6080); animation: s3wgrow0 .9s cubic-bezier(.2,.8,.2,1) both, pulse 1.6s ease-in-out infinite; }
 @keyframes s3wgrow0 { from { width: 0px; } }
-.s3wt1 { width: max(6px, calc(33.3333% - 194.73px)); }
-      .s3wf1 { width: max(6px, calc(30.6667% - 179.15px)); filter: drop-shadow(0 0 3px #F27A6080); animation: s3wgrow1 .9s cubic-bezier(.2,.8,.2,1) both, pulse 1.6s ease-in-out infinite; }
+.s3wt0 { width: max(6px, calc(33.3333% - 225.97px)); }
+.s3wf1 { width: max(6px, calc(30.6667% - 207.89px)); filter: drop-shadow(0 0 3px #F27A6080); animation: s3wgrow1 .9s cubic-bezier(.2,.8,.2,1) both, pulse 1.6s ease-in-out infinite; }
 @keyframes s3wgrow1 { from { width: 0px; } }
-.s3wt2 { width: max(6px, calc(33.3333% - 194.73px)); }
-      .s3wf2 { width: max(6px, calc(29.3333% - 171.37px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s3wgrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s3wt1 { width: max(6px, calc(33.3333% - 225.97px)); }
+.s3wf2 { width: max(6px, calc(29.3333% - 198.85px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s3wgrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s3wgrow2 { from { width: 0px; } }
-      .s3nt0 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s3nf0 { width: max(6px, calc(32.0000% - 135.87px)); filter: drop-shadow(0 0 3px #F27A6080); animation: s3ngrow0 .9s cubic-bezier(.2,.8,.2,1) both, pulse 1.6s ease-in-out infinite; }
+.s3wt2 { width: max(6px, calc(33.3333% - 225.97px)); }
+      .s3nf0 { width: max(6px, calc(32.0000% - 160.19px)); filter: drop-shadow(0 0 3px #F27A6080); animation: s3ngrow0 .9s cubic-bezier(.2,.8,.2,1) both, pulse 1.6s ease-in-out infinite; }
 @keyframes s3ngrow0 { from { width: 0px; } }
-.s3nt1 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s3nf1 { width: max(6px, calc(30.6667% - 130.21px)); filter: drop-shadow(0 0 3px #F27A6080); animation: s3ngrow1 .9s cubic-bezier(.2,.8,.2,1) both, pulse 1.6s ease-in-out infinite; }
+.s3nt0 { width: max(6px, calc(33.3333% - 166.87px)); }
+.s3nf1 { width: max(6px, calc(30.6667% - 153.52px)); filter: drop-shadow(0 0 3px #F27A6080); animation: s3ngrow1 .9s cubic-bezier(.2,.8,.2,1) both, pulse 1.6s ease-in-out infinite; }
 @keyframes s3ngrow1 { from { width: 0px; } }
-.s3nt2 { width: max(6px, calc(33.3333% - 141.53px)); }
-      .s3nf2 { width: max(6px, calc(29.3333% - 124.55px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s3ngrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
+.s3nt1 { width: max(6px, calc(33.3333% - 166.87px)); }
+.s3nf2 { width: max(6px, calc(29.3333% - 146.84px)); filter: drop-shadow(0 0 3px #F5C45180); animation: s3ngrow2 .9s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes s3ngrow2 { from { width: 0px; } }
+.s3nt2 { width: max(6px, calc(33.3333% - 166.87px)); }
+      .s3merc { transform: scaleY(0); } .s3bulb { fill: rgb(90,169,230); }
       .s3n { display: none; }
       
     </style>
-    <defs><linearGradient id="success"><stop offset="0" stop-color="#2F9E62"/><stop offset="1" stop-color="#62D697"/></linearGradient><linearGradient id="warning"><stop offset="0" stop-color="#D4951F"/><stop offset="1" stop-color="#F5C451"/></linearGradient><linearGradient id="error"><stop offset="0" stop-color="#D63E33"/><stop offset="1" stop-color="#F27A60"/></linearGradient><linearGradient id="capsule" x2="0" y2="1"><stop offset="0" stop-color="#2A2927"/><stop offset="1" stop-color="#1C1B1A"/></linearGradient></defs>
+    <defs><linearGradient id="success"><stop offset="0" stop-color="#2F9E62"/><stop offset="1" stop-color="#62D697"/></linearGradient><linearGradient id="warning"><stop offset="0" stop-color="#D4951F"/><stop offset="1" stop-color="#F5C451"/></linearGradient><linearGradient id="error"><stop offset="0" stop-color="#D63E33"/><stop offset="1" stop-color="#F27A60"/></linearGradient><linearGradient id="hot"><stop offset="0" stop-color="#D97757"/><stop offset="1" stop-color="#F5A25D"/></linearGradient><linearGradient id="capsule" x2="0" y2="1"><stop offset="0" stop-color="#2A2927"/><stop offset="1" stop-color="#1C1B1A"/></linearGradient></defs>
     <rect class="capsule" x=".5" y=".5" height="35" rx="17.5" fill="url(#capsule)" stroke="rgba(255,255,255,.08)"/>
     
   <g class="crab" transform="translate(16 9)">
@@ -467,27 +600,27 @@
           <text class="label muted" x="0" y="21.5">5H</text>
           <rect class="track s3wt0" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s3wf0" x="29.80" y="15" height="6" rx="3" fill="url(#error)"/></g></svg>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(-86.93 0)">
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-118.17 0)">
           <text class="pct fg" x="0" y="22.5">96%</text>
           <text class="reset muted" x="29.4" y="22">↻ 21m</text></g></svg>
-      </g><svg x="33.3333%" overflow="visible"><g transform="translate(9.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+      </g><svg x="33.3333%" overflow="visible"><g transform="translate(-15.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
-        <title>Weekly · 92% used · resets in 19h 0m</title>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(23.67 0)">
+        <title>Weekly · 92% used · resets in 17h 45m</title>
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-1.67 0)">
           <text class="label muted" x="0" y="21.5">7D</text>
           <rect class="track s3wt1" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s3wf1" x="29.80" y="15" height="6" rx="3" fill="url(#error)"/></g></svg>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-131.27 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-187.83 0)">
           <text class="pct fg" x="0" y="22.5">92%</text>
-          <text class="reset muted" x="29.4" y="22">↻ 19h 0m</text></g></svg>
-      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-34.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+          <text class="reset muted" x="29.4" y="22">↻ 17h 45m</text></g></svg>
+      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-85.33 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
         <title>Context window · 88% used</title>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-20.67 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-71.33 0)">
           <text class="label muted" x="0" y="21.5">CTX</text>
           <rect class="track s3wt2" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s3wf2" x="29.80" y="15" height="6" rx="3" fill="url(#warning)"/></g></svg>
-        <svg x="100.0000%" overflow="visible"><g transform="translate(-175.60 0)">
+        <svg x="100.0000%" overflow="visible"><g transform="translate(-257.50 0)">
           <text class="pct fg" x="0" y="22.5">88%</text>
           </g></svg>
       </g></g>
@@ -498,31 +631,40 @@
           <text class="label muted" x="0" y="21.5">5H</text>
           <rect class="track s3nt0" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s3nf0" x="29.80" y="15" height="6" rx="3" fill="url(#error)"/></g></svg>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(-33.73 0)">
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-59.07 0)">
           <text class="pct fg" x="0" y="22.5">96%</text>
           </g></svg>
-      </g><svg x="33.3333%" overflow="visible"><g transform="translate(9.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+      </g><svg x="33.3333%" overflow="visible"><g transform="translate(-15.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
-        <title>Weekly · 92% used · resets in 19h 0m</title>
-        <svg x="33.3333%" overflow="visible"><g transform="translate(23.67 0)">
+        <title>Weekly · 92% used · resets in 17h 45m</title>
+        <svg x="33.3333%" overflow="visible"><g transform="translate(-1.67 0)">
           <text class="label muted" x="0" y="21.5">7D</text>
           <rect class="track s3nt1" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s3nf1" x="29.80" y="15" height="6" rx="3" fill="url(#error)"/></g></svg>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-78.07 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-128.73 0)">
           <text class="pct fg" x="0" y="22.5">92%</text>
           </g></svg>
-      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-34.67 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
+      </g><svg x="66.6667%" overflow="visible"><g transform="translate(-85.33 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg>
       <g class="seg">
         <title>Context window · 88% used</title>
-        <svg x="66.6667%" overflow="visible"><g transform="translate(-20.67 0)">
+        <svg x="66.6667%" overflow="visible"><g transform="translate(-71.33 0)">
           <text class="label muted" x="0" y="21.5">CTX</text>
           <rect class="track s3nt2" x="29.80" y="15" height="6" rx="3"/>
           <rect class="s3nf2" x="29.80" y="15" height="6" rx="3" fill="url(#warning)"/></g></svg>
-        <svg x="100.0000%" overflow="visible"><g transform="translate(-122.40 0)">
+        <svg x="100.0000%" overflow="visible"><g transform="translate(-198.40 0)">
           <text class="pct fg" x="0" y="22.5">88%</text>
           </g></svg>
       </g></g>
-    <svg x="100.0000%" overflow="visible"><g transform="translate(-79.00 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg><g><title>Session cost</title><svg x="100.0000%" overflow="visible"><g transform="translate(-65.00 0)">
+    <svg x="100.0000%" overflow="visible"><g transform="translate(-155.00 0)"><line class="rule" x1="0" y1="12" x2="0" y2="24"/></g></svg><svg x="100.0000%" overflow="visible"><g transform="translate(-141.00 0)">
+    <g class="seg"><title>Prompt cache · cold: your next message rebuilds it · the last reply read 96% of its input from the cache</title>
+      <rect class="pill" x="0" y="9" width="66" height="18" rx="9"/>
+      <g class="s3thermo">
+        <rect x="11.5" y="11.5" width="5" height="11" rx="2.5" fill="rgba(255,255,255,.1)"/>
+        <rect class="s3merc" x="12.75" y="13" width="2.5" height="10" rx="1.25"/>
+        <circle class="s3bulb" cx="14" cy="22.5" r="3.4"/>
+      </g>
+      <text class="pct cold-t" x="24" y="22.5">cold</text>
+    </g></g></svg><g><title>Session cost</title><svg x="100.0000%" overflow="visible"><g transform="translate(-65.00 0)">
         <rect class="pill" x="0" y="9" width="51" height="18" rx="9"/>
         <text class="reset muted" x="9" y="21.5">$9.80</text></g></svg></g>
   </svg>
