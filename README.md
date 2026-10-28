@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/hero.svg" alt="The usage-limits band sitting above the Claude Code prompt: a pixel crab, gauges for the 5-hour window, the weekly window and the context window, a cache thermometer counting down, and the session cost" width="100%">
+<img src="assets/hero.svg?v=0.2.0" alt="The usage-limits band sitting above the Claude Code prompt: a pixel crab, gauges for the 5-hour window, the weekly window and the context window, a cache thermometer counting down, and the session cost" width="100%">
 
 <h1>usage-limits</h1>
 
@@ -73,13 +73,13 @@ That's it: no config, no keys, no network calls. The band appears after your nex
 
 ## 🎨 Every state
 
-<img src="assets/states.svg" alt="Four bands: calm and all green with a warm cache; working with the crab scuttling and the cache hot; warming up with amber bars past 70% and the cache cooling; and red hot with pulsing red bars past 90%, a sweating crab and a cold cache" width="100%">
+<img src="assets/states.svg?v=0.2.0" alt="Four bands: calm and all green with a warm cache; working with the crab scuttling and the cache hot; warming up with amber bars past 70% and the cache cooling; and red hot with pulsing red bars past 90%, a sweating crab and a cold cache" width="100%">
 
 ## 💻 In the terminal
 
 The terminal can't draw SVG, so there the band falls back to a single line of text bars in the same colours.
 
-<img src="assets/terminal.svg" alt="The terminal version: one line of text bars for 5h, 7d and context with reset times and the session cost, above the prompt box" width="100%">
+<img src="assets/terminal.svg?v=0.2.0" alt="The terminal version: one line of text bars for 5h, 7d and context with reset times and the session cost, above the prompt box" width="100%">
 
 ## ❓ FAQ
 
